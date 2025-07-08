@@ -32,7 +32,7 @@
 
 <!-- Animated divider -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/trinib/trinib/main/.images/marquee.svg" width="100%">
+![fc1c8c233f91166d9fbcd2a93abdf207](https://github.com/user-attachments/assets/e72621c3-7f8b-4d24-9206-1cb3f4076cfa)
 </div>
 
 <!-- Moving wave animation -->
