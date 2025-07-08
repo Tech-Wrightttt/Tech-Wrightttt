@@ -32,7 +32,8 @@
 
 <!-- Animated divider -->
 <div align="center">
-![bell](https://github.com/user-attachments/assets/c221e099-555a-4b40-a4f3-9f525adf4aaf)
+
+![shirogane-miyuki-shirogane](https://github.com/user-attachments/assets/557349c6-64de-4a58-bed5-d1a2fcbe7962)
 
 </div>
 
