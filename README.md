@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on school<br>👯 I’m looking to collaborate on making games<br>🤝 I’m looking for help with AI<br>🌱 I’m currently learning Python<br>💬 Ask me about anything<br>⚡ Fun fact my GOTY is Expedition 33 that is also made my only 33 devs
+🔭 I’m currently working on school<br>👯 I’m looking to collaborate on making games<br>🤝 I’m looking for help with AI<br>🌱 I’m currently learning Python<br>💬 Ask me about anything<br>⚡ Fun fact my GOTY is Expedition 33 that is also only made by only 33 devs
 
 
 ## 🌐 Socials:
@@ -22,3 +22,29 @@
 [![](https://visitcount.itsvg.in/api?id=Tech-Wrightttt&icon=0&color=0)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
+## 🎨 Animations
+
+<!-- Rainbow line animation -->
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&center=true&vCenter=true&width=435&lines=Keep+on+coding!;Stay+curious!;Make+something+awesome!" alt="Typing animation" />
+</div>
+
+<!-- Animated divider -->
+<div align="center">
+  <img src="https://raw.githubusercontent.com/trinib/trinib/main/.images/marquee.svg" width="100%">
+</div>
+
+<!-- Moving wave animation -->
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Tech-Wrightttt/Tech-Wrightttt/main/wave.svg" width="100%" height="150">
+</div>
+
+<!-- Animated fireworks -->
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
+  </picture>
+</div>
