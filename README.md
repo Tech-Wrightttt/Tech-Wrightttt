@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on school<br>👯 I’m looking to collaborate on making games<br>🤝 I’m looking for help with AI<br>🌱 I’m currently learning Python<br>💬 Ask me about anything<br>⚡ Fun fact my GOTY is Expedition 33 that is also only made by only 33 devs
+🔭 I’m currently working on my Computer Science Degree<br>👯 I’m looking to collaborate on making games<br>🤝 I’m looking for help with AI<br>🌱 I’m currently learning Python<br>💬 Ask me about anything<br>⚡ Fun fact my GOTY is Expedition 33 that is also only made by only 33 devs
 
 
 ## 🌐 Socials:
