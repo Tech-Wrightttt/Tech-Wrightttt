@@ -32,7 +32,7 @@
 
 <!-- Animated divider -->
 <div align="center">
-![fc1c8c233f91166d9fbcd2a93abdf207](https://github.com/user-attachments/assets/e72621c3-7f8b-4d24-9206-1cb3f4076cfa)
+![image alt](https://github.com/Tech-Wrightttt/Tech-Wrightttt/blob/main/bell.gif?raw=true)
 </div>
 
 <!-- Moving wave animation -->
