@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" width="100%" height="100%">
+  <defs>
+    <linearGradient id="compBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F0816"/>
+      <stop offset="50%" stop-color="#180C14"/>
+      <stop offset="100%" stop-color="#0A111C"/>
+    </linearGradient>
+
+    <!-- Badge Gradients -->
+    <linearGradient id="fireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5722"/>
+      <stop offset="100%" stop-color="#D50000"/>
+    </linearGradient>
+
+    <linearGradient id="iceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0288D1"/>
+    </linearGradient>
+
+    <linearGradient id="elecGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD600"/>
+      <stop offset="100%" stop-color="#FF6D00"/>
+    </linearGradient>
+
+    <linearGradient id="windGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E676"/>
+      <stop offset="100%" stop-color="#00897B"/>
+    </linearGradient>
+
+    <linearGradient id="nukeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B0FF"/>
+      <stop offset="100%" stop-color="#651FFF"/>
+    </linearGradient>
+
+    <linearGradient id="psyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="100%" stop-color="#C51162"/>
+    </linearGradient>
+
+    <linearGradient id="almightyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#FF1744"/>
+      <stop offset="100%" stop-color="#651FFF"/>
+    </linearGradient>
+
+    <filter id="affGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes affPulse {
+      0%, 100% { transform: translateY(0px); opacity: 0.95; }
+      50% { transform: translateY(-3px); opacity: 1; filter: drop-shadow(0 0 5px rgba(255, 230, 0, 0.6)); }
+    }
+    .card-hover-1 { animation: affPulse 3.5s ease-in-out infinite; }
+    .card-hover-2 { animation: affPulse 3.5s ease-in-out infinite 0.5s; }
+    .card-hover-3 { animation: affPulse 3.5s ease-in-out infinite 1s; }
+    .card-hover-4 { animation: affPulse 3.5s ease-in-out infinite 1.5s; }
+    .card-hover-5 { animation: affPulse 3.5s ease-in-out infinite 2s; }
+    .card-hover-6 { animation: affPulse 3.5s ease-in-out infinite 2.5s; }
+    .card-hover-7 { animation: affPulse 3.5s ease-in-out infinite 3s; }
+
+    .elem-title {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      fill: #FFFFFF;
+    }
+    .elem-sub {
+      font-family: 'Trebuchet MS', 'Arial', sans-serif;
+      font-size: 9.5px;
+      font-weight: bold;
+      fill: #E0E0E0;
+    }
+    .affinity-tag {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+  </style>
+
+  <!-- Base Panel -->
+  <rect width="920" height="230" rx="12" fill="url(#compBg)" stroke="#38294a" stroke-width="1.5"/>
+
+  <!-- Title Header -->
+  <g transform="translate(20, 16)">
+    <rect width="250" height="24" rx="4" fill="#FF1E27"/>
+    <text x="12" y="17" font-family="'Impact', 'Arial Black', sans-serif" font-size="13" fill="#FFF" letter-spacing="2">
+      ⚡ ELEMENTAL TECH COMPENDIUM
+    </text>
+    <text x="265" y="17" font-family="'Trebuchet MS', sans-serif" font-size="11" font-weight="bold" fill="#A0AEC0">
+      // INHERITED AFFINITIES &amp; SKILL TREES
+    </text>
+  </g>
+
+  <!-- 7 Elemental Cards Grid (x spacing ~ 122px) -->
+  
+  <!-- 1. FIRE (C / C++) -->
+  <g class="card-hover-1" transform="translate(20, 52)">
+    <rect width="118" height="155" rx="8" fill="#1C0F12" stroke="#FF5722" stroke-width="1.5"/>
+    <rect x="0" y="0" width="118" height="26" rx="8" fill="url(#fireGrad)"/>
+    <text x="59" y="18" class="elem-title" text-anchor="middle">🔥 AGI (FIRE)</text>
+    
+    <!-- Skill Icon -->
+    <circle cx="59" cy="56" r="18" fill="#2E1218" stroke="#FF5722" stroke-width="1"/>
+    <text x="59" y="62" font-family="'Impact', sans-serif" font-size="16" fill="#FF5722" text-anchor="middle">C++</text>
+    
+    <!-- Tech Names -->
+    <text x="59" y="93" class="elem-sub" text-anchor="middle">C &amp; C++</text>
+    <text x="59" y="108" font-family="'Trebuchet MS', sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Fast &amp; Low-Level</text>
+    
+    <!-- Affinity Rating -->
+    <rect x="14" y="124" width="90" height="20" rx="4" fill="#FF5722"/>
+    <text x="59" y="138" class="affinity-tag" fill="#FFF" text-anchor="middle">RESIST [HIGH]</text>
+  </g>
+
+  <!-- 2. ICE (Java / JavaFX) -->
+  <g class="card-hover-2" transform="translate(148, 52)">
+    <rect width="118" height="155" rx="8" fill="#0A1826" stroke="#00E5FF" stroke-width="1.5"/>
+    <rect x="0" y="0" width="118" height="26" rx="8" fill="url(#iceGrad)"/>
+    <text x="59" y="18" class="elem-title" text-anchor="middle">❄️ BUFU (ICE)</text>
+    
+    <circle cx="59" cy="56" r="18" fill="#0E2338" stroke="#00E5FF" stroke-width="1"/>
+    <text x="59" y="62" font-family="'Impact', sans-serif" font-size="13" fill="#00E5FF" text-anchor="middle">JAVA</text>
+    
+    <text x="59" y="93" class="elem-sub" text-anchor="middle">Java &amp; JavaFX</text>
+    <text x="59" y="108" font-family="'Trebuchet MS', sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Desktop &amp; OOP</text>
+    
+    <rect x="14" y="124" width="90" height="20" rx="4" fill="#00E5FF"/>
+    <text x="59" y="138" class="affinity-tag" fill="#000" text-anchor="middle">NULL [SOLID]</text>
+  </g>
+
+  <!-- 3. ELEC (Python) -->
+  <g class="card-hover-3" transform="translate(276, 52)">
+    <rect width="118" height="155" rx="8" fill="#1C1808" stroke="#FFD600" stroke-width="1.5"/>
+    <rect x="0" y="0" width="118" height="26" rx="8" fill="url(#elecGrad)"/>
+    <text x="59" y="18" class="elem-title" fill="#000" text-anchor="middle">⚡ ZIO (ELEC)</text>
+    
+    <circle cx="59" cy="56" r="18" fill="#2E2808" stroke="#FFD600" stroke-width="1"/>
+    <text x="59" y="62" font-family="'Impact', sans-serif" font-size="14" fill="#FFD600" text-anchor="middle">PY</text>
+    
+    <text x="59" y="93" class="elem-sub" text-anchor="middle">Python</text>
+    <text x="59" y="108" font-family="'Trebuchet MS', sans-serif" font-size="8.5" fill="#888" text-anchor="middle">AI &amp; Algorithms</text>
+    
+    <rect x="14" y="124" width="90" height="20" rx="4" fill="#FFD600"/>
+    <text x="59" y="138" class="affinity-tag" fill="#000" text-anchor="middle">REFLECT [MAIN]</text>
+  </g>
+
+  <!-- 4. WIND (Kotlin / Android) -->
+  <g class="card-hover-4" transform="translate(404, 52)">
+    <rect width="118" height="155" rx="8" fill="#081C14" stroke="#00E676" stroke-width="1.5"/>
+    <rect x="0" y="0" width="118" height="26" rx="8" fill="url(#windGrad)"/>
+    <text x="59" y="18" class="elem-title" text-anchor="middle">🌪️ GARU (WIND)</text>
+    
+    <circle cx="59" cy="56" r="18" fill="#0E2E20" stroke="#00E676" stroke-width="1"/>
+    <text x="59" y="62" font-family="'Impact', sans-serif" font-size="13" fill="#00E676" text-anchor="middle">KT</text>
+    
+    <text x="59" y="93" class="elem-sub" text-anchor="middle">Kotlin &amp; Android</text>
+    <text x="59" y="108" font-family="'Trebuchet MS', sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Modern Mobile</text>
+    
+    <rect x="14" y="124" width="90" height="20" rx="4" fill="#00E676"/>
+    <text x="59" y="138" class="affinity-tag" fill="#000" text-anchor="middle">DRAIN [ADAPT]</text>
+  </g>
+
+  <!-- 5. NUKE (Firebase / PHP) -->
+  <g class="card-hover-5" transform="translate(532, 52)">
+    <rect width="118" height="155" rx="8" fill="#130D26" stroke="#00B0FF" stroke-width="1.5"/>
+    <rect x="0" y="0" width="118" height="26" rx="8" fill="url(#nukeGrad)"/>
+    <text x="59" y="18" class="elem-title" text-anchor="middle">☢️ FREI (NUKE)</text>
+    
+    <circle cx="59" cy="56" r="18" fill="#1B1238" stroke="#00B0FF" stroke-width="1"/>
+    <text x="59" y="62" font-family="'Impact', sans-serif" font-size="12" fill="#00B0FF" text-anchor="middle">FIRE</text>
+    
+    <text x="59" y="93" class="elem-sub" text-anchor="middle">Firebase &amp; PHP</text>
+    <text x="59" y="108" font-family="'Trebuchet MS', sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Cloud &amp; Backend</text>
+    
+    <rect x="14" y="124" width="90" height="20" rx="4" fill="#00B0FF"/>
+    <text x="59" y="138" class="affinity-tag" fill="#000" text-anchor="middle">BURST [SYNC]</text>
+  </g>
+
+  <!-- 6. PSY (Game Dev & Creative) -->
+  <g class="card-hover-6" transform="translate(660, 52)">
+    <rect width="118" height="155" rx="8" fill="#200B17" stroke="#FF4081" stroke-width="1.5"/>
+    <rect x="0" y="0" width="118" height="26" rx="8" fill="url(#psyGrad)"/>
+    <text x="59" y="18" class="elem-title" text-anchor="middle">🔮 PSI (PSY)</text>
+    
+    <circle cx="59" cy="56" r="18" fill="#360E26" stroke="#FF4081" stroke-width="1"/>
+    <text x="59" y="62" font-family="'Impact', sans-serif" font-size="12" fill="#FF4081" text-anchor="middle">GAME</text>
+    
+    <text x="59" y="93" class="elem-sub" text-anchor="middle">Game Dev &amp; Art</text>
+    <text x="59" y="108" font-family="'Trebuchet MS', sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Systems &amp; VFX</text>
+    
+    <rect x="14" y="124" width="90" height="20" rx="4" fill="#FF4081"/>
+    <text x="59" y="138" class="affinity-tag" fill="#FFF" text-anchor="middle">CRIT [PASSION]</text>
+  </g>
+
+  <!-- 7. ALMIGHTY (Git & Tools) -->
+  <g class="card-hover-7" transform="translate(788, 52)">
+    <rect width="112" height="155" rx="8" fill="#1C1405" stroke="#FFD700" stroke-width="1.5"/>
+    <rect x="0" y="0" width="112" height="26" rx="8" fill="url(#almightyGrad)"/>
+    <text x="56" y="18" class="elem-title" fill="#000" text-anchor="middle">🌌 ALMIGHTY</text>
+    
+    <circle cx="56" cy="56" r="18" fill="#302306" stroke="#FFD700" stroke-width="1"/>
+    <text x="56" y="62" font-family="'Impact', sans-serif" font-size="12" fill="#FFD700" text-anchor="middle">GIT</text>
+    
+    <text x="56" y="93" class="elem-sub" text-anchor="middle">Git &amp; GitHub</text>
+    <text x="56" y="108" font-family="'Trebuchet MS', sans-serif" font-size="8.5" fill="#888" text-anchor="middle">DevOps &amp; Arch</text>
+    
+    <rect x="11" y="124" width="90" height="20" rx="4" fill="#FFD700"/>
+    <text x="56" y="138" class="affinity-tag" fill="#000" text-anchor="middle">UNBLOCKABLE</text>
+  </g>
+</svg>

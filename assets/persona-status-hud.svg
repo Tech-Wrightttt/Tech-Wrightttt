@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hudBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0a14"/>
+      <stop offset="50%" stop-color="#0b101d"/>
+      <stop offset="100%" stop-color="#140a0a"/>
+    </linearGradient>
+
+    <linearGradient id="hpGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E676"/>
+      <stop offset="100%" stop-color="#00B0FF"/>
+    </linearGradient>
+
+    <linearGradient id="spGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF1744"/>
+      <stop offset="100%" stop-color="#FF9100"/>
+    </linearGradient>
+
+    <linearGradient id="radarFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1E27" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#00E5FF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FFE600" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <pattern id="hudGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes barPulse {
+      0%, 100% { filter: drop-shadow(0 0 3px #00E676); }
+      50% { filter: drop-shadow(0 0 10px #00E676); }
+    }
+    @keyframes spPulse {
+      0%, 100% { filter: drop-shadow(0 0 3px #FF1744); }
+      50% { filter: drop-shadow(0 0 10px #FF1744); }
+    }
+    @keyframes radarBreath {
+      0%, 100% { transform: scale(1); transform-origin: 460px 175px; }
+      50% { transform: scale(1.04); transform-origin: 460px 175px; }
+    }
+    @keyframes badgeGlow {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 1; filter: drop-shadow(0 0 6px #FFE600); }
+    }
+
+    .hp-pulse { animation: barPulse 3s ease-in-out infinite; }
+    .sp-pulse { animation: spPulse 2.7s ease-in-out infinite; }
+    .radar-anim { animation: radarBreath 4s ease-in-out infinite; }
+    .badge-glow { animation: badgeGlow 2.5s ease-in-out infinite; }
+
+    .hud-title {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      fill: #FFFFFF;
+    }
+    .hud-label {
+      font-family: 'Trebuchet MS', 'Arial', sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      fill: #A0B4C8;
+    }
+    .hud-value {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 13px;
+      fill: #FFF;
+    }
+    .stat-text {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="920" height="320" rx="14" fill="url(#hudBg)" stroke="#2a2438" stroke-width="2"/>
+  <rect width="920" height="320" rx="14" fill="url(#hudGrid)"/>
+
+  <!-- Top Header Ribbon -->
+  <g transform="translate(20, 16)">
+    <polygon points="0,0 260,0 245,28 0,28" fill="#FF1E27"/>
+    <text x="14" y="19" class="hud-title">◆ PHANTOM STATUS HUD</text>
+
+    <polygon points="270,0 600,0 585,28 255,28" fill="#002D62"/>
+    <text x="290" y="19" class="hud-title" fill="#00E5FF">S.E.E.S. OPERATIONAL FILE // 033</text>
+
+    <polygon points="610,0 880,0 880,28 595,28" fill="#B38600"/>
+    <text x="630" y="19" class="hud-title" fill="#000">INVESTIGATION ARCHIVE</text>
+  </g>
+
+  <!-- ================= LEFT COLUMN: CHARACTER & VITALS ================= -->
+  <g transform="translate(30, 65)">
+    <!-- Box Container -->
+    <rect width="255" height="235" rx="8" fill="#120D1A" stroke="#FF1E27" stroke-width="1.5" opacity="0.9"/>
+    
+    <!-- Character Header -->
+    <rect x="10" y="10" width="235" height="28" rx="4" fill="#1F0F1B"/>
+    <text x="20" y="29" font-family="'Impact', 'Arial Black', sans-serif" font-size="14" fill="#FF1E27">TRICKSTER</text>
+    <text x="130" y="29" font-family="'Impact', 'Arial Black', sans-serif" font-size="13" fill="#FFE600">LV. 99 (CS)</text>
+
+    <!-- Arcana Card -->
+    <g transform="translate(10, 48)">
+      <rect width="235" height="42" rx="4" fill="#181324" stroke="#432874" stroke-width="1"/>
+      <circle cx="22" cy="21" r="14" fill="#2A1B4E" stroke="#00E5FF" stroke-width="1.5"/>
+      <text x="22" y="26" font-family="'Impact', sans-serif" font-size="12" fill="#00E5FF" text-anchor="middle">0</text>
+      <text x="44" y="20" class="hud-label">ARCANA</text>
+      <text x="44" y="34" font-family="'Impact', 'Arial Black', sans-serif" font-size="12" fill="#FFF">THE FOOL (Infinite Possibility)</text>
+    </g>
+
+    <!-- HP Bar -->
+    <g transform="translate(10, 100)">
+      <text x="0" y="12" font-family="'Impact', sans-serif" font-size="12" fill="#00E676">HP</text>
+      <text x="175" y="12" font-family="'Trebuchet MS', sans-serif" font-size="11" font-weight="bold" fill="#00E676">999 / 999</text>
+      <rect x="0" y="16" width="235" height="14" rx="4" fill="#002914" stroke="#00E676" stroke-width="1"/>
+      <rect x="2" y="18" width="231" height="10" rx="2" fill="url(#hpGrad)" class="hp-pulse"/>
+    </g>
+
+    <!-- SP Bar -->
+    <g transform="translate(10, 142)">
+      <text x="0" y="12" font-family="'Impact', sans-serif" font-size="12" fill="#FF1744">SP</text>
+      <text x="175" y="12" font-family="'Trebuchet MS', sans-serif" font-size="11" font-weight="bold" fill="#FF1744">999 / 999</text>
+      <rect x="0" y="16" width="235" height="14" rx="4" fill="#300008" stroke="#FF1744" stroke-width="1"/>
+      <rect x="2" y="18" width="231" height="10" rx="2" fill="url(#spGrad)" class="sp-pulse"/>
+    </g>
+
+    <!-- Theurgia / Baton Pass Meter -->
+    <g transform="translate(10, 184)">
+      <rect width="235" height="38" rx="4" fill="#1C1800" stroke="#FFE600" stroke-width="1"/>
+      <text x="10" y="16" class="hud-label" fill="#FFE600">THEURGIA / BATON PASS</text>
+      <text x="10" y="31" font-family="'Impact', 'Arial Black', sans-serif" font-size="12" fill="#FFF">MAX GAUGE READY (BOOSTED)</text>
+    </g>
+  </g>
+
+  <!-- ================= CENTER COLUMN: SOCIAL STATS RADAR ================= -->
+  <g transform="translate(315, 65)">
+    <!-- Box Container -->
+    <rect width="290" height="235" rx="8" fill="#0D1322" stroke="#00E5FF" stroke-width="1.5" opacity="0.9"/>
+    
+    <rect x="10" y="10" width="270" height="26" rx="4" fill="#00213D"/>
+    <text x="145" y="27" font-family="'Impact', 'Arial Black', sans-serif" font-size="13" fill="#00E5FF" text-anchor="middle">
+      ★ SOCIAL STATS PENTAGON ★
+    </text>
+
+    <!-- Pentagon Web Center (cx: 145, cy: 128) -->
+    <g transform="translate(0, 5)">
+      <!-- Pentagon Grid Rings -->
+      <!-- Ring 1 (outer) -->
+      <polygon points="145,50 215,100 190,175 100,175 75,100" fill="none" stroke="#005580" stroke-width="1" stroke-dasharray="3,3"/>
+      <!-- Ring 2 (mid) -->
+      <polygon points="145,72 195,108 177,160 113,160 95,108" fill="none" stroke="#003D5C" stroke-width="1"/>
+      <!-- Ring 3 (inner) -->
+      <polygon points="145,95 175,116 164,145 126,145 115,116" fill="none" stroke="#002B40" stroke-width="1"/>
+      <!-- Axis Lines -->
+      <line x1="145" y1="128" x2="145" y2="50" stroke="#00E5FF" stroke-width="1" opacity="0.4"/>
+      <line x1="145" y1="128" x2="215" y2="100" stroke="#00E5FF" stroke-width="1" opacity="0.4"/>
+      <line x1="145" y1="128" x2="190" y2="175" stroke="#00E5FF" stroke-width="1" opacity="0.4"/>
+      <line x1="145" y1="128" x2="100" y2="175" stroke="#00E5FF" stroke-width="1" opacity="0.4"/>
+      <line x1="145" y1="128" x2="75" y2="100" stroke="#00E5FF" stroke-width="1" opacity="0.4"/>
+
+      <!-- Animated Maxed Out Stat Polygon -->
+      <polygon points="145,54 210,103 186,172 104,172 79,103" fill="url(#radarFill)" stroke="#FFE600" stroke-width="2" class="radar-anim" filter="url(#neonGlow)"/>
+
+      <!-- Pentagon Labels -->
+      <!-- Top: KNOWLEDGE -->
+      <text x="145" y="44" fill="#FFE600" class="stat-text" text-anchor="middle">KNOWLEDGE (MAX)</text>
+      <!-- Right Top: GUTS -->
+      <text x="222" y="103" fill="#FF1E27" class="stat-text" text-anchor="start">GUTS (MAX)</text>
+      <!-- Right Bottom: PROFICIENCY -->
+      <text x="195" y="192" fill="#00E5FF" class="stat-text" text-anchor="start">PROFICIENCY (MAX)</text>
+      <!-- Left Bottom: KINDNESS -->
+      <text x="95" y="192" fill="#00E676" class="stat-text" text-anchor="end">KINDNESS (MAX)</text>
+      <!-- Left Top: CHARM -->
+      <text x="68" y="103" fill="#FF4081" class="stat-text" text-anchor="end">CHARM (MAX)</text>
+    </g>
+
+    <!-- Bottom Rank Banner -->
+    <rect x="25" y="200" width="240" height="22" rx="4" fill="#00182C" stroke="#00E5FF" stroke-width="1"/>
+    <text x="145" y="215" font-family="'Trebuchet MS', sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">
+      ALL TRAITS TRANSCENDED TO RANK 5
+    </text>
+  </g>
+
+  <!-- ================= RIGHT COLUMN: SKILLS & EQUIPPED ================= -->
+  <g transform="translate(635, 65)">
+    <!-- Box Container -->
+    <rect width="255" height="235" rx="8" fill="#1C1608" stroke="#FFE600" stroke-width="1.5" opacity="0.9"/>
+    
+    <rect x="10" y="10" width="235" height="26" rx="4" fill="#3D3000"/>
+    <text x="127" y="27" font-family="'Impact', 'Arial Black', sans-serif" font-size="13" fill="#FFE600" text-anchor="middle">
+      ⚔️ EQUIPPED SKILL LOADOUT
+    </text>
+
+    <!-- Skill 1: Almighty -->
+    <g transform="translate(10, 44)">
+      <rect width="235" height="34" rx="4" fill="#292004"/>
+      <circle cx="16" cy="17" r="9" fill="#FF1E27"/>
+      <text x="16" y="21" font-family="'Impact', sans-serif" font-size="10" fill="#FFF" text-anchor="middle">A</text>
+      <text x="32" y="16" font-family="'Impact', sans-serif" font-size="12" fill="#FFF">MEGIDOLAON</text>
+      <text x="32" y="28" font-family="'Trebuchet MS', sans-serif" font-size="9.5" fill="#C8B080">Colossal Game Dev &amp; AI Algorithms</text>
+    </g>
+
+    <!-- Skill 2: Passive -->
+    <g transform="translate(10, 84)">
+      <rect width="235" height="34" rx="4" fill="#292004"/>
+      <circle cx="16" cy="17" r="9" fill="#00E5FF"/>
+      <text x="16" y="21" font-family="'Impact', sans-serif" font-size="10" fill="#000" text-anchor="middle">P</text>
+      <text x="32" y="16" font-family="'Impact', sans-serif" font-size="12" fill="#FFF">VICTORY CRY</text>
+      <text x="32" y="28" font-family="'Trebuchet MS', sans-serif" font-size="9.5" fill="#C8B080">Instant 100% Stamina on Bug Fixed</text>
+    </g>
+
+    <!-- Skill 3: Trait -->
+    <g transform="translate(10, 124)">
+      <rect width="235" height="34" rx="4" fill="#292004"/>
+      <circle cx="16" cy="17" r="9" fill="#00E676"/>
+      <text x="16" y="21" font-family="'Impact', sans-serif" font-size="10" fill="#000" text-anchor="middle">T</text>
+      <text x="32" y="16" font-family="'Impact', sans-serif" font-size="12" fill="#FFF">RELENTLESS</text>
+      <text x="32" y="28" font-family="'Trebuchet MS', sans-serif" font-size="9.5" fill="#C8B080">+50% Focus during 3AM Code Sprints</text>
+    </g>
+
+    <!-- Skill 4: Special -->
+    <g transform="translate(10, 164)">
+      <rect width="235" height="34" rx="4" fill="#292004"/>
+      <circle cx="16" cy="17" r="9" fill="#FFE600"/>
+      <text x="16" y="21" font-family="'Impact', sans-serif" font-size="10" fill="#000" text-anchor="middle">S</text>
+      <text x="32" y="16" font-family="'Impact', sans-serif" font-size="12" fill="#FFE600">EXPEDITION DREAM</text>
+      <text x="32" y="28" font-family="'Trebuchet MS', sans-serif" font-size="9.5" fill="#C8B080">Aspiration: Build GOTY Masterpiece</text>
+    </g>
+
+    <!-- Bottom Action Ribbon -->
+    <rect x="10" y="204" width="235" height="20" rx="3" fill="#FFE600" class="badge-glow"/>
+    <text x="127" y="218" font-family="'Impact', 'Arial Black', sans-serif" font-size="11" fill="#000" text-anchor="middle">
+      READY FOR ALL-OUT ATTACK
+    </text>
+  </g>
+
+  <!-- Outer Frame Accents -->
+  <rect x="4" y="4" width="912" height="312" rx="10" fill="none" stroke="#FFE600" stroke-width="1.2" opacity="0.3"/>
+</svg>

@@ -1,9 +1,262 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-  <rect width="100%" height="100%" fill="#0d1117"/>
-  <path stroke="#38a169" stroke-width="1" fill="none" d="M0,0 L100,0 L100,100 L0,100 Z">
-    <animate attributeName="d" dur="10s" repeatCount="indefinite" 
-      values="M0,0 L100,0 L100,100 L0,100 Z;
-              M0,0 L100,0 L100,50 L0,50 Z;
-              M0,0 L100,0 L100,100 L0,100 Z"/>
-  </path>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 190" width="100%" height="100%">
+  <defs>
+    <linearGradient id="palaceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120306"/>
+      <stop offset="50%" stop-color="#1A050A"/>
+      <stop offset="100%" stop-color="#080204"/>
+    </linearGradient>
+
+    <linearGradient id="stealthGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF1E27"/>
+      <stop offset="100%" stop-color="#FFE600"/>
+    </linearGradient>
+
+    <filter id="tileGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes thiefScan {
+      0% { transform: translate(40px, 60px); }
+      20% { transform: translate(220px, 84px); }
+      40% { transform: translate(440px, 60px); }
+      60% { transform: translate(620px, 108px); }
+      80% { transform: translate(780px, 84px); }
+      100% { transform: translate(840px, 60px); }
+    }
+    @keyframes tileFlicker1 {
+      0%, 100% { fill: #330008; }
+      50% { fill: #FF1E27; filter: drop-shadow(0 0 4px #FF1E27); }
+    }
+    @keyframes tileFlicker2 {
+      0%, 100% { fill: #4D000C; }
+      50% { fill: #FFE600; filter: drop-shadow(0 0 4px #FFE600); }
+    }
+    @keyframes tileFlicker3 {
+      0%, 100% { fill: #1A0004; }
+      50% { fill: #00E5FF; filter: drop-shadow(0 0 4px #00E5FF); }
+    }
+    @keyframes pulseAlert {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; filter: drop-shadow(0 0 6px #FF1E27); }
+    }
+
+    .thief-marker { animation: thiefScan 8s ease-in-out infinite alternate; }
+    .tf-1 { animation: tileFlicker1 2.5s ease-in-out infinite; }
+    .tf-2 { animation: tileFlicker2 3.2s ease-in-out infinite 0.7s; }
+    .tf-3 { animation: tileFlicker3 4s ease-in-out infinite 1.2s; }
+    .alert-pulse { animation: pulseAlert 2s ease-in-out infinite; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="920" height="190" rx="12" fill="url(#palaceBg)" stroke="#FF1E27" stroke-width="1.5"/>
+
+  <!-- Top Ribbon -->
+  <g transform="translate(18, 16)">
+    <polygon points="0,0 280,0 265,26 0,26" fill="#FF1E27"/>
+    <text x="14" y="18" font-family="'Impact', 'Arial Black', sans-serif" font-size="12" fill="#FFF" letter-spacing="1.5">
+      🏰 METAVERSE PALACE INFILTRATION GRID
+    </text>
+
+    <!-- Alert Level Badge -->
+    <g transform="translate(730, 0)">
+      <rect width="150" height="24" rx="4" fill="#000" stroke="#FF1E27" stroke-width="1.2" class="alert-pulse"/>
+      <text x="75" y="16" font-family="'Impact', sans-serif" font-size="11" fill="#FFE600" text-anchor="middle" letter-spacing="1">
+        SECURITY LEVEL: 99% ⚠️
+      </text>
+    </g>
+  </g>
+
+  <!-- Contribution-like Grid (53 columns x 7 rows, styled like Metaverse Palace route) -->
+  <g transform="translate(24, 52)">
+    <!-- Simulated Grid Matrix -->
+    <!-- Row 0 -->
+    <g fill="#1F0006">
+      <!-- 35 sample blocks across width -->
+      <rect x="0" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="25" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="50" y="0" width="18" height="12" rx="2" fill="#660010"/>
+      <rect x="75" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="100" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="125" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="150" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="175" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="200" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="225" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="250" y="0" width="18" height="12" rx="2" fill="#FF5500"/>
+      <rect x="275" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="300" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="325" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="350" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="375" y="0" width="18" height="12" rx="2" class="tf-3"/>
+      <rect x="400" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="425" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="450" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="475" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="500" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="525" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="550" y="0" width="18" height="12" rx="2" fill="#FF7700"/>
+      <rect x="575" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="600" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="625" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="650" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="675" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="700" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="725" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="750" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="775" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="800" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="825" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="850" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+    </g>
+
+    <!-- Row 1 -->
+    <g transform="translate(0, 18)" fill="#1F0006">
+      <rect x="0" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="25" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="50" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="75" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="100" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="125" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="150" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="175" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="200" y="0" width="18" height="12" rx="2" class="tf-3"/>
+      <rect x="225" y="0" width="18" height="12" rx="2" fill="#FF7700"/>
+      <rect x="250" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="275" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="300" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="325" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="350" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="375" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="400" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="425" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="450" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="475" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="500" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="525" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="550" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="575" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="600" y="0" width="18" height="12" rx="2" class="tf-3"/>
+      <rect x="625" y="0" width="18" height="12" rx="2" fill="#FF7700"/>
+      <rect x="650" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="675" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="700" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="725" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="750" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="775" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="800" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="825" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="850" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(0, 36)" fill="#1F0006">
+      <rect x="0" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="25" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="50" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="75" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="100" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="125" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="150" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="175" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="200" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="225" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="250" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="275" y="0" width="18" height="12" rx="2" class="tf-3"/>
+      <rect x="300" y="0" width="18" height="12" rx="2" fill="#FF7700"/>
+      <rect x="325" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="350" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="375" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="400" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="425" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="450" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="475" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="500" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="525" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="550" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="575" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="600" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="625" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="650" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="675" y="0" width="18" height="12" rx="2" class="tf-3"/>
+      <rect x="700" y="0" width="18" height="12" rx="2" fill="#FF7700"/>
+      <rect x="725" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="750" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="775" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="800" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="825" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="850" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(0, 54)" fill="#1F0006">
+      <rect x="0" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="25" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="50" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="75" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="100" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="125" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="150" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="175" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="200" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="225" y="0" width="18" height="12" rx="2" class="tf-3"/>
+      <rect x="250" y="0" width="18" height="12" rx="2" fill="#FF7700"/>
+      <rect x="275" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="300" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="325" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="350" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="375" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="400" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="425" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="450" y="0" width="18" height="12" rx="2" fill="#8A0015"/>
+      <rect x="475" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="500" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="525" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="550" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="575" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="600" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="625" y="0" width="18" height="12" rx="2" class="tf-3"/>
+      <rect x="650" y="0" width="18" height="12" rx="2" fill="#FF7700"/>
+      <rect x="675" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="700" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="725" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+      <rect x="750" y="0" width="18" height="12" rx="2" class="tf-1"/>
+      <rect x="775" y="0" width="18" height="12" rx="2" fill="#2E020A"/>
+      <rect x="800" y="0" width="18" height="12" rx="2" fill="#FF1E27"/>
+      <rect x="825" y="0" width="18" height="12" rx="2" class="tf-2"/>
+      <rect x="850" y="0" width="18" height="12" rx="2" fill="#FFD700"/>
+    </g>
+  </g>
+
+  <!-- Animated Phantom Mask Infiltration Marker -->
+  <g class="thief-marker" filter="url(#tileGlow)">
+    <!-- Phantom Thief Mask icon -->
+    <path d="M-14,-6 C-8,-14 8,-14 14,-6 C18,0 12,12 0,16 C-12,12 -18,0 -14,-6 Z" fill="#000000" stroke="#FF1E27" stroke-width="2"/>
+    <!-- Eye slits -->
+    <path d="M-9,-3 C-6,-5 -3,-5 0,-2 C-4,1 -7,0 -9,-3 Z" fill="#FFE600"/>
+    <path d="M9,-3 C6,-5 3,-5 0,-2 C4,1 7,0 9,-3 Z" fill="#FFE600"/>
+    <!-- Crosshair Ring -->
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#FFE600" stroke-width="1" stroke-dasharray="4,2"/>
+  </g>
+
+  <!-- Bottom Legend Bar -->
+  <g transform="translate(24, 156)">
+    <text x="0" y="12" font-family="'Trebuchet MS', sans-serif" font-size="10" font-weight="bold" fill="#718096">
+      INFILTRATION LEVEL:
+    </text>
+    <rect x="130" y="2" width="12" height="12" rx="2" fill="#2E020A"/>
+    <text x="146" y="12" font-family="'Trebuchet MS', sans-serif" font-size="9" fill="#718096">Unexplored</text>
+    <rect x="220" y="2" width="12" height="12" rx="2" fill="#8A0015"/>
+    <text x="236" y="12" font-family="'Trebuchet MS', sans-serif" font-size="9" fill="#718096">Shadows Cleared</text>
+    <rect x="340" y="2" width="12" height="12" rx="2" fill="#FF1E27"/>
+    <text x="356" y="12" font-family="'Trebuchet MS', sans-serif" font-size="9" fill="#FF1E27">Route Secured</text>
+    <rect x="450" y="2" width="12" height="12" rx="2" fill="#FFE600"/>
+    <text x="466" y="12" font-family="'Trebuchet MS', sans-serif" font-size="9" fill="#FFE600">Treasure Stolen</text>
+    
+    <text x="868" y="12" font-family="'Impact', sans-serif" font-size="11" fill="#FFE600" text-anchor="end">
+      ★ 100% INFILTRATION RATE ★
+    </text>
+  </g>
 </svg>
